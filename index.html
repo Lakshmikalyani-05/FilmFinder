@@ -10,22 +10,40 @@
 
     <p>Find the best movies based on your interests.</p>
     <h2>Select Your Language</h2>
+    <input type="text" placeholder="Search Movies">
+    <div class="language-buttons">
+        <button onclick="showMovies('Telugu')">Telugu</button>
+        <button onclick="showMovies('Hindi')">Hindi</button>
+        <button onclick="showMovies('English')">English</button>
+        <button onclick="showMovies('All')">All Movies</button>
+    <h2>Popular Movies</h2>
+    </div>
+    <div class="movies-container">
+        <div class="movie-card Telugu" id="teluguMovie">
+            <h2>🎬</h2>
+            <h3>Sita Ramam</h3>
+            <p>Language: Telugu</p>
+            <p>Genre: Romance</p>
+            <p>Rating: ⭐ 8.5/10</p>
+            <p>A beautiful love story with emotional drama.</p>
+        </div>
 
-<button>Telugu</button>
-<button>Hindi</button>
-<button>English</button>
-<button>Tamil</button>
-<button>Malayalam</button>
-<button>Kannada</button>
-<h2>Popular Movies</h2>
+        <div class="movie-card Hindi" id="hindiMovie">
+            <h3>Dangal</h3>
+            <p>Language: Hindi</p>
+            <p>Genre: Sports Drama</p>
+            <p>Rating: ⭐ 8.3/10</p>
+            <p>An inspiring story about wrestling and family.</p>
+        </div>
 
-<div class="movie-card">
-    <h3>Sita Ramam</h3>
-    <p>Language: Telugu</p>
-    <p>Genre: Romance</p>
-    <p>Rating: ⭐ 8.5/10</p>
-    <p>A beautiful love story with emotional drama.</p>
-</div>
-
+        <div class="movie-card English" id="englishMovie">
+            <h3>Interstellar</h3>
+            <p>Language: English</p>
+            <p>Genre: Sci-Fi</p>
+            <p>Rating: ⭐ 8.7/10</p>
+            <p>A journey through space and time to save humanity.</p>
+        </div>
+    </div>
+<script src="script.js"></script>
 </body>
 </html>

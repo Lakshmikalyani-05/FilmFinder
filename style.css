@@ -37,10 +37,37 @@ button:hover{
     background-color: purple;
 }
 .movie-card{
-    background-color: white;
-    width: 300px;
-    margin: 20px auto;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0px 2px 8px gray;
+    background: linear-gradient(135deg, #ff9ad5, #a855f7);
+    color: white;
+    width: 280px;
+    padding: 20px;
+    border-radius: 15px;
+    margin: 15px;
+    box-shadow: 0px 5px 15px rgba(128, 0, 128, 0.4);
+}
+.language-buttons{
+    margin-top: 20px;
+}
+input{
+    display:block;
+    width:300px;
+    padding:12px;
+    margin:20px auto;
+    border-radius:8px;
+    border:1px solid gray;
+    font-size:16px;
+}
+.movie-card:hover{
+    transform: translateY(-8px);
+    transition: 0.3s;
+}
+.movies-container{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.movie-card h3{
+    color: white;
+    font-size: 28px;
 }
