@@ -10,7 +10,7 @@
 
     <p>Find the best movies based on your interests.</p>
     <h2>Select Your Language</h2>
-    <input type="text" placeholder="Search Movies">
+    <input type="text" id="searchInput" placeholder="Search Movies" onkeyup="searchMovies()">
     <div class="language-buttons">
         <button onclick="showMovies('Telugu')">Telugu</button>
         <button onclick="showMovies('Hindi')">Hindi</button>
@@ -29,6 +29,7 @@
         </div>
 
         <div class="movie-card Hindi" id="hindiMovie">
+            <h2>🎬</h2>
             <h3>Dangal</h3>
             <p>Language: Hindi</p>
             <p>Genre: Sports Drama</p>
@@ -37,11 +38,33 @@
         </div>
 
         <div class="movie-card English" id="englishMovie">
+            <h2>🎬</h2>
             <h3>Interstellar</h3>
             <p>Language: English</p>
             <p>Genre: Sci-Fi</p>
             <p>Rating: ⭐ 8.7/10</p>
             <p>A journey through space and time to save humanity.</p>
+        </div>
+        <div class="movie-card Telugu">
+            <h2>🎬</h2>
+            <h3>RRR</h3>
+            <p>Language: Telugu</p>
+            <p>Genre: Action</p>
+            <p>Rating: ⭐ 8.0/10</p>
+        </div>
+        <div class="movie-card Hindi">
+            <h2>🎬</h2>
+            <h3>3 Idiots</h3>
+            <p>Language: Hindi</p>
+            <p>Genre: Comedy/Drama</p>
+            <p>Rating: ⭐ 8.4/10</p>
+        </div>
+        <div class="movie-card English">
+            <h2>🎬</h2>
+            <h3>Inception</h3>
+            <p>Language: English</p>
+            <p>Genre: Sci-Fi/Thriller</p>
+            <p>Rating: ⭐ 8.8/10</p>
         </div>
     </div>
 <script src="script.js"></script>
