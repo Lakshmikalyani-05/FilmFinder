@@ -23,3 +23,19 @@ function searchMovies() {
         }
     });
 }
+function filterMovies() {
+    let selectedLanguage = document.getElementById("languageFilter").value;
+    let selectedCategory = document.getElementById("categoryFilter").value;
+    let movies = document.querySelectorAll(".movie-card");
+
+    movies.forEach(function(movie) {
+        let languageMatch = selectedLanguage === "All" || movie.classList.contains(selectedLanguage);
+        let categoryMatch = selectedCategory === "All" || movie.classList.contains(selectedCategory);
+
+        if (languageMatch && categoryMatch) {
+            movie.style.display = "block";
+        } else {
+            movie.style.display = "none";
+        }
+    });
+}

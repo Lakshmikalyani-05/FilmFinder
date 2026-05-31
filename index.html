@@ -9,20 +9,36 @@
     <h1>🎬 Film Finder</h1>
 
     <p>Find the best movies based on your interests.</p>
-    <h2>Select Your Language</h2>
     <input type="text" id="searchInput" placeholder="Search Movies" onkeyup="searchMovies()">
-    <div class="language-buttons">
-        <button onclick="showMovies('Telugu')">Telugu</button>
-        <button onclick="showMovies('Hindi')">Hindi</button>
-        <button onclick="showMovies('English')">English</button>
-        <button onclick="showMovies('Tamil')">Tamil</button>
-        <button onclick="showMovies('Malayalam')">Malayalam</button>
-        <button onclick="showMovies('Kannada')">Kannada</button>
-        <button onclick="showMovies('All')">All Movies</button>
-    <h2>Popular Movies</h2>
+    <div class="filters">
+       
+        <label>Language:</label>
+        <select id="languageFilter" onchange="filterMovies()">
+            <option value="All">All Languages</option>
+            <option value="Telugu">Telugu</option>
+            <option value="Hindi">Hindi</option>
+            <option value="English">English</option>
+            <option value="Tamil">Tamil</option>
+            <option value="Malayalam">Malayalam</option>
+            <option value="Kannada">Kannada</option>
+        </select>
+        <label>Category:</label>
+        <select id="categoryFilter" onchange="filterMovies()">
+            <option value="All">All Categories</option>
+            <option value="Romance">Romance</option>
+            <option value="Action">Action</option>
+            <option value="Sports Drama">Sports Drama</option>
+            <option value="Comedy/Drama">Comedy/Drama</option>
+            <option value="Sci-Fi">Sci-Fi</option>
+            <option value="Sci-Fi/Thriller">Sci-Fi/Thriller</option>
+        </select>
+    
     </div>
+    
+
+
     <div class="movies-container">
-        <div class="movie-card Telugu">
+        <div class="movie-card Telugu Romance">
             <h2>🎬</h2>
             <h3>Sita Ramam</h3>
             <p><b>Language:</b> Telugu</p>
@@ -31,7 +47,7 @@
             <p>A heart-touching love story about a soldier named Ram and a woman named Sita. Their lives become connected through letters, leading to an emotional journey filled with love, sacrifice, and unforgettable memories.</p>
         </div>
 
-        <div class="movie-card Telugu">
+        <div class="movie-card Telugu Action">
             <h2>🎬</h2>
             <h3>RRR</h3>
             <p><b>Language:</b> Telugu</p>
@@ -40,7 +56,7 @@
             <p>An action-packed historical drama based on the friendship of two brave revolutionaries. The movie is filled with powerful action scenes, emotions, and a strong message about courage and freedom.</p>
         </div>
 
-        <div class="movie-card Hindi">
+        <div class="movie-card Hindi Sports">
             <h2>🎬</h2>
             <h3>Dangal</h3>
             <p><b>Language:</b> Hindi</p>
@@ -49,7 +65,7 @@
             <p>An inspiring sports drama based on a father's dream to make his daughters world-class wrestlers. The movie highlights hard work, determination, and the importance of believing in yourself.</p>
         </div>
 
-        <div class="movie-card Hindi">
+        <div class="movie-card Hindi Comedy">
             <h2>🎬</h2>
             <h3>3 Idiots</h3>
             <p><b>Language:</b> Hindi</p>
@@ -58,7 +74,7 @@
             <p>A comedy-drama that follows the lives of three engineering students. The movie teaches valuable lessons about education, friendship, passion, and choosing a career based on interest rather than pressure.</p>
         </div>
 
-        <div class="movie-card English">
+        <div class="movie-card English Sci-Fi">
             <h2>🎬</h2>
             <h3>Interstellar</h3>
             <p><b>Language:</b> English</p>
@@ -67,7 +83,7 @@
             <p>A science-fiction adventure where astronauts travel through space to find a new home for humanity. The movie combines science, emotions, and a father's love for his family.</p>
         </div>
 
-        <div class="movie-card English">
+        <div class="movie-card English Sci-Fi/Thriller">
             <h2>🎬</h2>
             <h3>Inception</h3>
             <p><b>Language:</b> English</p>
@@ -75,7 +91,7 @@
             <p><b>Rating:</b> ⭐ 8.8/10</p>
             <p>A mind-bending thriller about a skilled thief who enters people's dreams to steal secrets. The movie is filled with mystery, action, and unique concepts that keep viewers engaged.</p>
         </div>
-        <div class="movie-card Tamil">
+        <div class="movie-card Tamil Action/Thriller">
             <h2>🎬</h2>
             <h3>Vikram</h3>
             <p><b>Language:</b> Tamil</p>
@@ -84,7 +100,7 @@
             <p>An intense action thriller about a special agent who investigates a dangerous crime network. The movie is filled with suspense, powerful performances, and stylish action scenes.</p>
         </div>
 
-        <div class="movie-card Malayalam">
+        <div class="movie-card Malayalam Romantic/Drama">
             <h2>🎬</h2>
             <h3>Premam</h3>
             <p><b>Language:</b> Malayalam</p>
@@ -93,7 +109,7 @@
             <p>A beautiful coming-of-age romantic drama that shows different stages of love and life. The movie is simple, emotional, and relatable for many viewers.</p>
         </div>
 
-        <div class="movie-card Kannada">
+        <div class="movie-card Kannada Action/Drama">
             <h2>🎬</h2>
             <h3>KGF</h3>
             <p><b>Language:</b> Kannada</p>
@@ -101,7 +117,16 @@
             <p><b>Rating:</b> ⭐ 8.2/10</p>
             <p>A powerful action drama about ambition, struggle, and power. The movie follows Rocky’s journey from poverty to becoming a strong and fearless leader.</p>
         </div>
+        <div class="movie-card Telugu Sci-Fi">
+            <h2>🎬</h2>
+            <h3>Aditya 369</h3>
+            <p><b>Language:</b> Telugu</p>
+            <p><b>Genre:</b> Sci-Fi</p>
+            <p><b>Rating:</b> ⭐ 8.5/10</p>
+            <p>A classic Telugu science-fiction movie based on time travel, adventure, and historical imagination.</p>
+        </div>
     </div>
+    
 <script src="script.js"></script>
 </body>
 </html>
