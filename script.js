@@ -12,16 +12,24 @@ function showMovies(language) {
 function searchMovies() {
     let input = document.getElementById("searchInput").value.toLowerCase();
     let movies = document.querySelectorAll(".movie-card");
+    let visibleCount = 0;
 
     movies.forEach(function(movie) {
         let movieName = movie.querySelector("h3").innerText.toLowerCase();
 
         if (movieName.includes(input)) {
             movie.style.display = "block";
+            visibleCount++;
         } else {
             movie.style.display = "none";
         }
     });
+
+    if (visibleCount === 0) {
+        document.getElementById("noMovies").style.display = "block";
+    } else {
+        document.getElementById("noMovies").style.display = "none";
+    }
 }
 function filterMovies() {
     let selectedLanguage = document.getElementById("languageFilter").value;
