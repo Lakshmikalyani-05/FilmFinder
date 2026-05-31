@@ -116,3 +116,10 @@ select{
 .details-btn:hover{
     background-color:#9333ea;
 }
+.short-description{
+    display:block;
+}
+
+.full-description{
+    display:none;
+}

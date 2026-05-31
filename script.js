@@ -47,3 +47,22 @@ function filterMovies() {
         }
     });
 }
+function toggleDescription(button) {
+
+    let shortDescription = button.previousElementSibling.previousElementSibling;
+    let fullDescription = button.previousElementSibling;
+
+    if (fullDescription.style.display === "none" || fullDescription.style.display === "") {
+
+        shortDescription.style.display = "none";
+        fullDescription.style.display = "block";
+        button.innerText = "Show Less";
+
+    } else {
+
+        shortDescription.style.display = "block";
+        fullDescription.style.display = "none";
+        button.innerText = "Read More";
+
+    }
+}
