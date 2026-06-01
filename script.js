@@ -71,3 +71,34 @@ function toggleFavorite(heart){
     }
 
 }
+async function loadMovies() {
+    const response = await fetch("http://127.0.0.1:5000/movies");
+    const movies = await response.json();
+
+    let container = document.getElementById("movieContainer");
+
+    container.innerHTML = "";
+
+    movies.forEach(movie => {
+
+        container.innerHTML += `
+        <div class="movie-card">
+
+            <h3>${movie.name}</h3>
+
+            <p><b>Language:</b> ${movie.language}</p>
+
+            <p><b>Genre:</b> ${movie.category}</p>
+
+            <p><b>Rating:</b> ⭐ ${movie.rating}/10</p>
+
+            <p class="short-description">
+                ${movie.shortDescription}
+            </p>
+
+        </div>
+        `;
+    });
+}
+
+loadMovies();
