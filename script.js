@@ -102,3 +102,15 @@ async function loadMovies() {
 }
 
 loadMovies();
+async function testBackendMovies() {
+    const response = await fetch("http://127.0.0.1:5000/movies");
+    const movies = await response.json();
+
+    let box = document.getElementById("backendTest");
+
+    movies.forEach(function(movie) {
+        box.innerHTML += `<p>${movie.name} - ${movie.language}</p>`;
+    });
+}
+
+testBackendMovies();
