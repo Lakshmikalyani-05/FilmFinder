@@ -1,0 +1,92 @@
+[
+  {
+    "name": "Sita Ramam",
+    "language": "Telugu",
+    "category": "Romance",
+    "rating": 8.5,
+    "poster": "images/sitaramam.jpg",
+    "shortDescription": "A heart-touching love story about a soldier and a woman connected through letters...",
+    "fullDescription": "A heart-touching love story about a soldier named Ram and a woman named Sita. Their lives become connected through letters, leading to an emotional journey filled with love, sacrifice, and unforgettable memories."
+  },
+  {
+    "name": "RRR",
+    "language": "Telugu",
+    "category": "Action",
+    "rating": 8.0,
+    "poster": "images/rrr.jpg",
+    "shortDescription": "An action-packed story about two brave revolutionaries and their friendship...",
+    "fullDescription": "An action-packed historical drama based on the friendship of two brave revolutionaries. The movie is filled with powerful action scenes, emotions, and a strong message about courage and freedom."
+  },
+  {
+    "name": "Aditya 369",
+    "language": "Telugu",
+    "category": "Sci-Fi",
+    "rating": 8.5,
+    "poster": "images/aditya369.jpg",
+    "shortDescription": "A classic Telugu science-fiction movie based on time travel...",
+    "fullDescription": "A classic Telugu science-fiction movie based on time travel, adventure, and historical imagination. The story takes viewers through different time periods with suspense, creativity, and entertainment."
+  },
+  {
+    "name": "Dangal",
+    "language": "Hindi",
+    "category": "Sports Drama",
+    "rating": 8.3,
+    "poster": "images/dangal.jpg",
+    "shortDescription": "An inspiring sports drama about hard work, family, and dreams...",
+    "fullDescription": "An inspiring sports drama based on a father's dream to make his daughters world-class wrestlers. The movie highlights hard work, determination, discipline, and the importance of believing in yourself."
+  },
+  {
+    "name": "3 Idiots",
+    "language": "Hindi",
+    "category": "Comedy Drama",
+    "rating": 8.4,
+    "poster": "images/3idiots.jpg",
+    "shortDescription": "A comedy-drama about friendship, education, and following passion...",
+    "fullDescription": "A comedy-drama that follows the lives of three engineering students. The movie teaches valuable lessons about education, friendship, passion, career pressure, and choosing a path based on interest rather than fear."
+  },
+  {
+    "name": "Interstellar",
+    "language": "English",
+    "category": "Sci-Fi",
+    "rating": 8.7,
+    "poster": "images/interstellar.jpg",
+    "shortDescription": "A science-fiction adventure about space, time, and family...",
+    "fullDescription": "A science-fiction adventure where astronauts travel through space to find a new home for humanity. The movie combines science, emotions, survival, and a father's love for his family."
+  },
+  {
+    "name": "Inception",
+    "language": "English",
+    "category": "Sci-Fi Thriller",
+    "rating": 8.8,
+    "poster": "images/inception.jpg",
+    "shortDescription": "A mind-bending thriller about dreams, secrets, and reality...",
+    "fullDescription": "A mind-bending thriller about a skilled thief who enters people's dreams to steal secrets. The movie is filled with mystery, action, and unique concepts that keep viewers engaged until the end."
+  },
+  {
+    "name": "Vikram",
+    "language": "Tamil",
+    "category": "Action",
+    "rating": 8.3,
+    "poster": "images/vikram.jpg",
+    "shortDescription": "An intense action thriller about crime, mystery, and justice...",
+    "fullDescription": "Vikram is an action thriller about a retired special agent who returns to investigate a dangerous criminal network. The movie is known for its suspense, powerful performances, and stylish action scenes."
+  },
+  {
+    "name": "Premam",
+    "language": "Malayalam",
+    "category": "Romance",
+    "rating": 8.0,
+    "poster": "images/premam.jpg",
+    "shortDescription": "A beautiful romantic drama about love, friendship, and growth...",
+    "fullDescription": "Premam is a romantic drama that follows the journey of a young man through different stages of love in his life. The movie beautifully portrays friendship, emotions, heartbreak, and personal growth."
+  },
+  {
+    "name": "KGF",
+    "language": "Kannada",
+    "category": "Action",
+    "rating": 8.2,
+    "poster": "images/kgf.jpg",
+    "shortDescription": "A powerful action drama about ambition, struggle, and power...",
+    "fullDescription": "KGF tells the story of Rocky, a young man who rises from poverty with a dream of gaining power and respect. His journey takes him to the dangerous Kolar Gold Fields, where he faces enemies, challenges, and life-changing decisions."
+  }
+]

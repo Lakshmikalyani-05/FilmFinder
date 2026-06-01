@@ -1,27 +1,7 @@
 from flask import Flask
+import json
 
 app = Flask(__name__)
-
-movies = [
-    {
-        "name": "Sita Ramam",
-        "language": "Telugu",
-        "category": "Romance",
-        "rating": 8.5
-    },
-    {
-        "name": "RRR",
-        "language": "Telugu",
-        "category": "Action",
-        "rating": 8.0
-    },
-    {
-        "name": "Dangal",
-        "language": "Hindi",
-        "category": "Sports Drama",
-        "rating": 8.3
-    }
-]
 
 @app.route("/")
 def home():
@@ -29,6 +9,9 @@ def home():
 
 @app.route("/movies")
 def get_movies():
+    with open("backend/movies.json", "r") as file:
+        movies = json.load(file)
+
     return movies
 
 if __name__ == "__main__":
