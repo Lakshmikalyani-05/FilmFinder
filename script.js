@@ -48,21 +48,26 @@ function filterMovies() {
     });
 }
 function toggleDescription(button) {
-
-    let shortDescription = button.previousElementSibling.previousElementSibling;
-    let fullDescription = button.previousElementSibling;
+    let shortDescription = button.parentElement.querySelector(".short-description");
+    let fullDescription = button.parentElement.querySelector(".full-description");
 
     if (fullDescription.style.display === "none" || fullDescription.style.display === "") {
-
         shortDescription.style.display = "none";
         fullDescription.style.display = "block";
         button.innerText = "Show Less";
-
     } else {
-
         shortDescription.style.display = "block";
         fullDescription.style.display = "none";
         button.innerText = "Read More";
-
     }
+}
+function toggleFavorite(heart){
+
+    if(heart.innerText === "🤍"){
+        heart.innerText = "❤️";
+    }
+    else{
+        heart.innerText = "🤍";
+    }
+
 }
