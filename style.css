@@ -1,8 +1,9 @@
 body{
-    background-color: #f4f4f4;
+    background-color: linear-gradient(135deg, #fdf2f8, #f3e8ff);
     text-align: center;
     font-family: Arial, sans-serif;
 }
+
 
 h1{
     color: darkblue;
