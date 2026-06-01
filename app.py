@@ -3,6 +3,11 @@ import json
 
 app = Flask(__name__)
 
+@app.after_request
+def add_cors_headers(response):
+    response.headers["Access-Control-Allow-Origin"] = "*"
+    return response
+
 @app.route("/")
 def home():
     return "FilmFinder Backend is Working!"
@@ -11,7 +16,6 @@ def home():
 def get_movies():
     with open("backend/movies.json", "r") as file:
         movies = json.load(file)
-
     return movies
 
 if __name__ == "__main__":

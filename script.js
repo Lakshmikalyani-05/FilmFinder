@@ -75,14 +75,16 @@ async function loadMovies() {
     const response = await fetch("http://127.0.0.1:5000/movies");
     const movies = await response.json();
 
-    let container = document.getElementById("movieContainer");
+    let container = document.getElementById("backendMovieContainer");
 
     container.innerHTML = "";
 
     movies.forEach(movie => {
 
         container.innerHTML += `
-        <div class="movie-card">
+        <div class="movie-card ${movie.language} ${movie.category}">
+
+            <img src="${movie.poster}" alt="${movie.name}">
 
             <h3>${movie.name}</h3>
 
@@ -95,6 +97,14 @@ async function loadMovies() {
             <p class="short-description">
                 ${movie.shortDescription}
             </p>
+
+            <p class="full-description">
+                ${movie.fullDescription}
+            </p>
+
+            <button class="details-btn" onclick="toggleDescription(this)">
+                Read More
+            </button>
 
         </div>
         `;
