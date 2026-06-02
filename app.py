@@ -14,7 +14,7 @@ def home():
 
 @app.route("/movies")
 def get_movies():
-    with open("backend/movies.json", "r") as file:
+    with open("backend/movies.json", "r", encoding="utf-8") as file:
         movies = json.load(file)
     return movies
 
