@@ -1,3 +1,4 @@
+let allMovies = [];
 function showMovies(language) {
     let movies = document.querySelectorAll(".movie-card");
 
@@ -10,20 +11,15 @@ function showMovies(language) {
     });
 }
 function searchMovies() {
+
     let input = document.getElementById("searchInput").value.toLowerCase();
-    let movies = document.querySelectorAll(".movie-card");
-    let visibleCount = 0;
 
-    movies.forEach(function(movie) {
-        let movieName = movie.querySelector("h3").innerText.toLowerCase();
+    let filteredMovies = allMovies.filter(movie =>
+        movie.name.toLowerCase().includes(input)
+    );
 
-        if (movieName.includes(input)) {
-            movie.style.display = "block";
-            visibleCount++;
-        } else {
-            movie.style.display = "none";
-        }
-    });
+    displayMovies(filteredMovies);
+}
 
     if (visibleCount === 0) {
         document.getElementById("noMovies").style.display = "block";
@@ -32,20 +28,27 @@ function searchMovies() {
     }
 }
 function filterMovies() {
-    let selectedLanguage = document.getElementById("languageFilter").value;
-    let selectedCategory = document.getElementById("categoryFilter").value;
-    let movies = document.querySelectorAll(".movie-card");
 
-    movies.forEach(function(movie) {
-        let languageMatch = selectedLanguage === "All" || movie.classList.contains(selectedLanguage);
-        let categoryMatch = selectedCategory === "All" || movie.classList.contains(selectedCategory);
+    let selectedLanguage =
+        document.getElementById("languageFilter").value;
 
-        if (languageMatch && categoryMatch) {
-            movie.style.display = "block";
-        } else {
-            movie.style.display = "none";
-        }
+    let selectedCategory =
+        document.getElementById("categoryFilter").value;
+
+    let filteredMovies = allMovies.filter(movie => {
+
+        let languageMatch =
+            selectedLanguage === "All" ||
+            movie.language === selectedLanguage;
+
+        let categoryMatch =
+            selectedCategory === "All" ||
+            movie.category === selectedCategory;
+
+        return languageMatch && categoryMatch;
     });
+
+    displayMovies(filteredMovies);
 }
 function toggleDescription(button) {
     let shortDescription = button.parentElement.querySelector(".short-description");
@@ -73,7 +76,8 @@ function toggleFavorite(heart){
 }
 async function loadMovies() {
     const response = await fetch("http://127.0.0.1:5000/movies");
-    const movies = await response.json();
+    allMovies = await response.json();
+    displayMovies(allMovies);
 
     let container = document.getElementById("backendMovieContainer");
 
@@ -124,3 +128,36 @@ async function testBackendMovies() {
 }
 
 testBackendMovies();
+function displayMovies(movies) {
+
+    let container = document.getElementById("movieContainer");
+
+    container.innerHTML = "";
+
+    movies.forEach(movie => {
+
+        container.innerHTML += `
+        <div class="movie-card ${movie.language} ${movie.category}">
+
+            <img src="${movie.poster}" alt="${movie.name}">
+
+            <h3>${movie.name}</h3>
+
+            <p><b>Language:</b> ${movie.language}</p>
+
+            <p><b>Genre:</b> ${movie.genre}</p>
+
+            <p><b>Rating:</b> ⭐ ${movie.rating}/10</p>
+
+            <p class="short-description">${movie.shortDescription}</p>
+
+            <p class="full-description">${movie.fullDescription}</p>
+
+            <button class="details-btn" onclick="toggleDescription(this)">
+                Read More
+            </button>
+
+        </div>
+        `;
+    });
+}
