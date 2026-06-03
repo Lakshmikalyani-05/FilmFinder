@@ -41,6 +41,7 @@ function displayMovies(movies) {
             <p><b>Language:</b> ${movie.language}</p>
             <p><b>Genre:</b> ${movie.genre}</p>
             <p><b>Rating:</b> ⭐ ${movie.rating}/10</p>
+            <p class="languages"><b>Available In:</b><br>${movie.availableLanguages.join(", ")}</p>
 
             <p class="short-description">${movie.shortDescription}</p>
             <p class="full-description">${movie.fullDescription}</p>
@@ -69,7 +70,8 @@ function filterMovies() {
 
     let filteredMovies = allMovies.filter(movie => {
         let languageMatch =
-            selectedLanguage === "All" || movie.language === selectedLanguage;
+            selectedLanguage === "All" ||
+            movie.availableLanguages.includes(selectedLanguage);
 
         let categoryMatch =
             selectedCategory === "All" || movie.category === selectedCategory;
@@ -105,3 +107,63 @@ function toggleFavorite(heart) {
 }
 
 loadMovies();
+let bannerImages = [
+    "images/sitaramam.jpg",
+    "images/rrr.jpg",
+    "images/jersey.jpg"
+];
+
+let bannerIndex = 0;
+
+setInterval(function(){
+    bannerIndex++;
+
+    if(bannerIndex >= bannerImages.length){
+        bannerIndex = 0;
+    }
+
+    document.getElementById("bannerImage").src = bannerImages[bannerIndex];
+
+}, 3000);
+let favorites = [];
+
+function openAbout(){
+    document.getElementById("aboutModal").style.display = "block";
+    document.body.style.overflow = "hidden";
+}
+
+function closeAbout(){
+    document.getElementById("aboutModal").style.display = "none";
+    document.body.style.overflow = "auto";
+}
+
+function openFavorites(){
+    let box = document.getElementById("favoriteMovies");
+    box.innerHTML = "";
+
+    if(favorites.length === 0){
+        box.innerHTML = "<p>No favorite movies added yet 💔</p>";
+    } else {
+        favorites.forEach(movie => {
+            box.innerHTML += `<p>❤️ ${movie}</p>`;
+        });
+    }
+
+    document.getElementById("favoritesModal").style.display = "block";
+}
+
+function closeFavorites(){
+    document.getElementById("favoritesModal").style.display = "none";
+}
+
+function toggleFavorite(heart){
+    let movieName = heart.closest(".movie-card").querySelector("h3").innerText;
+
+    if(heart.innerText === "🤍"){
+        heart.innerText = "❤️";
+        favorites.push(movieName);
+    } else {
+        heart.innerText = "🤍";
+        favorites = favorites.filter(movie => movie !== movieName);
+    }
+}
